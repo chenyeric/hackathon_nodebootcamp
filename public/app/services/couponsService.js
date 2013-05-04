@@ -41,6 +41,9 @@ app.service('couponsService', function () {
         },
         {
             id: 2, name: "M&M", url: 'http://www.mymms.com/', discount: 10, code: '10RETAILMENOT'
+        },
+        {
+            id:3, name: "coke cola", url:"http://coke.com/", discount: 12, code:"COKE12"
         }
     ];
 

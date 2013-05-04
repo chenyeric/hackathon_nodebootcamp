@@ -37,9 +37,9 @@
                 <div class="row">
                     <div class="span12">
 
-                    <label class="checkbox">
-                      <input type="checkbox" value="">
-                      SHOW ME THE BEST DEAL!
+                    <label>
+                      <input type="checkbox" data-ng-class="{'active': order=='name'}" ng-click="setOrder($event, 'discount')" value="">
+                      SHOW ME THE BEST DEALZ!
                     </label>
                     </div>
                 </div>
@@ -56,7 +56,7 @@
                 <br /><br />
                 <div>
                     <div class="row cardContainer">
-                        <div class="span3 card" data-ng-repeat="coupon in coupons">
+                        <div class="animated fadeIn span3 card" data-ng-repeat="coupon in coupons | orderBy:order">
                             <button class="btn close cardClose" data-ng-click="deleteCoupon(coupon.id)">&times;</button>
                             <div class="cardHeader"><a href="{{coupon.url}}">{{coupon.name}}</a></div>
                             <div class="cardBody">{{coupon.discount + "% code: " + coupon.code}} </div>

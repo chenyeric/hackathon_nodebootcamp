@@ -15,14 +15,21 @@
 //This controller retrieves data from the customersService and associates it with the $scope
 //The $scope is ultimately bound to the customers view
 app.controller('CouponsController', function ($scope, couponsService) {
-
     //I like to have an init() for controllers that need to perform some initialization. Keeps things in
     //one place...not required though especially in the simple example below
     init();
 
     function init() {
         $scope.coupons = couponsService.getCoupons();
+        $scope.order = "name";
     }
+
+    $scope.setOrder = function ($event, order) {
+        var checkbox = $event.target;
+        $scope.order = (checkbox.checked ? order : 'name');
+        console.log($scope.order);
+
+    };
 
     $scope.insertCoupon = function () {
         var name = $scope.newCoupon.name;
