@@ -1,0 +1,69 @@
+﻿<div class="coupons view">
+    <div class="container">
+        <header>
+            <h3>Coupons</h3>
+        </header>
+
+        <div class="row">
+            <div class="span3">
+                <div class="row">
+                    <div class="span12">
+                        Name:
+                        <br />
+                        <input data-ng-model="newCoupon.name" type="text" placeholder="Site Name">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span12">
+                        URL:
+                        <br />
+                        <input data-ng-model="newCoupon.url" type="text" placeholder="Site URL">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span12">
+                        Discount:
+                        <br />
+                        <input data-ng-model="newCoupon.discount" type="text" placeholder="Discount">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span12">
+                        Code:
+                        <br />
+                        <input data-ng-model="newCoupon.code" type="text" placeholder="Code">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="span12">
+
+                    <label class="checkbox">
+                      <input type="checkbox" value="">
+                      SHOW ME THE BEST DEAL!
+                    </label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="spans12">
+                        <button id="submitCoupon" class="btn btn-primary" type="button" 
+                            data-ng-disabled="!newCoupon.name || !newCoupon.url || !newCoupon.discount || !newCoupon.code" 
+                            data-ng-click="insertCoupon()">Add Coupon</button>
+                    </div>
+                </div>
+            </div>
+                
+            <div class="span9">
+                <br /><br />
+                <div>
+                    <div class="row cardContainer">
+                        <div class="span3 card" data-ng-repeat="coupon in coupons">
+                            <button class="btn close cardClose" data-ng-click="deleteCoupon(coupon.id)">&times;</button>
+                            <div class="cardHeader"><a href="{{coupon.url}}">{{coupon.name}}</a></div>
+                            <div class="cardBody">{{coupon.discount + "% code: " + coupon.code}} </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
