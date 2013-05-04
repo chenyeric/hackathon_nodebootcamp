@@ -34,7 +34,7 @@ app.controller('CouponsController', function ($scope, couponsService) {
     $scope.insertCoupon = function () {
         var name = $scope.newCoupon.name;
         var url = $scope.newCoupon.url;
-        var discount = $scope.newCoupon.discount;
+        var discount = parseInt($scope.newCoupon.discount);
         var code = $scope.newCoupon.code;
 
         couponsService.insertCoupon(name, url, discount, code);
