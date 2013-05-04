@@ -56,7 +56,7 @@
                 <br /><br />
                 <div>
                     <div class="row cardContainer">
-                        <div class="animated fadeIn span3 card" data-ng-repeat="coupon in coupons | orderBy:order">
+                        <div class="animated fadeIn span3 card" data-ng-repeat="coupon in coupons | orderBy:order:true">
                             <button class="btn close cardClose" data-ng-click="deleteCoupon(coupon.id)">&times;</button>
                             <div class="cardHeader"><a href="{{coupon.url}}">{{coupon.name}}</a></div>
                             <div class="cardBody">{{coupon.discount + "% code: " + coupon.code}} </div>
